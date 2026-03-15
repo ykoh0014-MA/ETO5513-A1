@@ -1,0 +1,34 @@
+---
+title: "ETO5513-A1"
+author: "Eileen Koh"
+date: "2026-03-15"
+output: html_document
+---
+
+
+# Part A
+
+## Section 1: Load libraries
+
+
+```{r libraries, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,   warning = FALSE,
+  message = FALSE)
+
+library(knitr)
+library(markdown)
+library(tidyverse)
+library(readxl)
+library(ggplot2)  #Plots
+library(dplyr)
+library(bookdown)
+
+```
+
+## Section 2: Research questions
+
+1. What are the life expectancy and life satisfaction in Asia countries? 
+2. Is life expectancy correlated with life satisfaction?
+
+
+
