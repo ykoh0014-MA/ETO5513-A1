@@ -32,3 +32,26 @@ library(bookdown)
 
 
 
+## Section 3: Data set introduction
+
+This dataset shows the life expectancies at birth, population size and self-reported life satisfaction across Asia countries from 2011 to 2024. For self-reported life satisfaction, the respondents are supposed to think of a ladder, with 
+the best possible life for them being a 10 and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale.
+
+
+
+```{r data}
+life_df <- readxl::read_excel("C:/Users/eleen/Documents/Documents/Monash Units/TP2-26_ETO5513 Collaborative/A1/ETO5513-A1/Data/Life Expectancy and Life Satisfaction_Asia.xlsx")
+```
+
+```{r Explore data}
+head(life_df)
+glimpse(life_df)
+summary(life_df)
+# use kable to report variables
+
+kable(
+  data.frame(Variable = names(life_df)),
+  caption = "List of variables in the dataset"
+)
+```
+
