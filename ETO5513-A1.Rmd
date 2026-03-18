@@ -10,16 +10,16 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE)
-knitr::opts_chunk$set(fig.path = "Figures", fig.align ="center", out.width = "50%")
+knitr::opts_chunk$set(fig.path = "Figures", fig.align ="center", out.width = "80%")
 #options(bookdown.table.caption = FALSE)
 ```
 
 # Part A
 
-## Section 1: Load libraries
+## Load libraries
 
 
-```{r load libraries, include=FALSE}
+```{r Load_libraries, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,   warning = FALSE,
   message = FALSE)
 
@@ -33,14 +33,14 @@ library(bookdown)
 library(kableExtra)
 ```
 
-## Section 2: Research questions
+## Research Questions
 
 1. What are the life expectancy and life satisfaction in Asia countries? 
 2. Is life expectancy correlated with life satisfaction?
 
 
 
-## Section 3: Data set introduction
+## Dataset Introduction
 
 
 This dataset from Our World in Data website ["Life satisfaction vs. life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  shows the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The dataset has been reduced to include only selected Asia countries. 
@@ -50,11 +50,11 @@ For self-reported life satisfaction, the respondents are supposed to think of a 
 ### Exploring dataset
 
 
-```{r data}
+```{r Load_data}
 life_df <- readxl::read_excel("C:/Users/eleen/Documents/Documents/Monash Units/TP2-26_ETO5513 Collaborative/A1/ETO5513-A1/Data/Life Expectancy and Life Satisfaction_Asia.xlsx")
 ```
 
-```{r Explore data}
+```{r Explore_data}
 head(life_df)
 glimpse(life_df)
 summary(life_df)
@@ -72,6 +72,57 @@ knitr::kable(
 
 
 As shown in Table \@ref(tab:var-table), the dataset contains several variables.
+
+## Dataset Description
+
+The dataset comprises `r nrow(life_df)` observations and `r ncol(life_df)` variables covering `r paste(names(life_df), collapse = ", ")` across Asian countries between 2011 and 2024.
+
+Below shows the image of the inline R code on the number of variables and observations.
+
+```{r Load_Image}
+knitr::include_graphics("C:/Users/eleen/Documents/Documents/Monash Units/TP2-26_ETO5513 Collaborative/A1/ETO5513 Assessment 1/Picture1.png")
+```
+
+Below shows the type of variables in the data set. There are 4 numeric variables and 1 character variable.
+```{r Showtype}
+
+str(life_df)
+```
+
+## Data Summary
+
+#### 1. What are the life expectancy and life satisfaction in different countries in Asia? 
+
+
+```{r Life expectancy summary}
+
+# 1. Life expectancy in Asia countries 
+
+# Generate mean and median of life expectancy
+summary_stats <- life_df %>%
+  group_by(Entity) %>%
+  summarise(
+    n = n(),
+    `Mean of Life Expectancy` = mean(`Life expectancy at birth`, na.rm = TRUE),
+    `Variance of Life Expectancy` = var(`Life expectancy at birth`, na.rm = TRUE),
+    `Median of Life Expectancy` = median(`Life expectancy at birth`, na.rm = TRUE),
+    `1st quarter of Life Expectancy` = quantile(`Life expectancy at birth`, probs = 0.25, na.rm = TRUE),
+    `3rd quarter of Life Expectancy` = quantile(`Life expectancy at birth`, probs = 0.75, na.rm = TRUE)
+  )
+print(summary_stats)
+
+# Put into a table
+
+kable(
+  data.frame(summary_stats),
+  caption = "Summary Statistics of Life Expectancy in Asia countries"
+)
+```
+
+The summary shows that countries like Hong Kong (84.3) has the highest mean life expectancy, while **India** has the lowest among the listed Asian countries. Overall, the variation in life expectancy is relatively small within each country, suggesting stable health outcomes across the observed years.
+
+
+
 
 
 ## Declaration
