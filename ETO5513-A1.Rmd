@@ -43,9 +43,9 @@ library(kableExtra)
 ## Dataset Introduction
 
 
-This dataset from Our World in Data website ["Life satisfaction vs. life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  shows the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The dataset has been reduced to include only selected Asia countries. 
+This dataset from Our World in Data website ["Life satisfaction vs. life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  shows the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The original dataset has been reduced to include only selected Asia countries to fit the criteria of the assessment. 
 
-For self-reported life satisfaction, the respondents are supposed to think of a ladder, with the best possible life for them being a 10 and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale.
+The self-reported life satisfaction is defined when the respondents are supposed to think of a ladder, with the best possible life for them being a 10 and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale.
 
 ### Exploring dataset
 
@@ -170,7 +170,7 @@ Table \@ref(tab:table3) indicates that Singapore (6.5 out of 10) reports the hig
 
 
 
-The scatterplot below answers the research question on "Is life expectancy correlated with life satisfaction?".
+To answer the research question on "Is life expectancy correlated with life satisfaction?", a scatterplot is created below.
 
 ```{r chart, fig.cap="Correlation between Life Expectancy and Life Satisfaction"}
 ggplot(life_df, aes(x = `Life expectancy at birth`, y = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, color = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`)) +
@@ -184,6 +184,8 @@ ggplot(life_df, aes(x = `Life expectancy at birth`, y = `Life satisfaction (meas
   
 
 ```
+
+To determine if the relationship between Life Expectancy and Life Satisfaction is significant, the Pearson Correlation is performed.
 
 ```{r Correlation}
 
@@ -199,7 +201,14 @@ Findings:
 
 
 
+# Conclusion
 
+
+The findings reflect on the variation in Asian countries in both life expectancy and life satisfaction: countries like Japan, Hong Kong, and Singapore rank high in both life expectancy and life satisfaction, while India consistently reports lower values.
+
+The statistically significant positive correlation (r ≈ 0.60) between life expectancy and life satisfaction indicates that those living longer life tend to report greater well-being.
+
+Together, these findings answer the two guiding questions: life expectancy and life satisfaction differ across Asia, and importantly, higher life expectancy is correlated with higher life satisfaction.
 
 
 ## Declaration
