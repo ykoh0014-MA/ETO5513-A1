@@ -2,16 +2,24 @@
 title: "ETO5513-A1"
 author: "Eileen Koh"
 date: "2026-03-15"
-output: html_document
+output:
+  bookdown::html_document2:
+    keep_md: true
 ---
 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+knitr::opts_chunk$set(fig.path = "Figures", fig.align ="center", out.width = "50%")
+#options(bookdown.table.caption = FALSE)
+```
 
 # Part A
 
 ## Section 1: Load libraries
 
 
-```{r libraries, include=FALSE}
+```{r load libraries, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,   warning = FALSE,
   message = FALSE)
 
@@ -22,7 +30,7 @@ library(readxl)
 library(ggplot2)  #Plots
 library(dplyr)
 library(bookdown)
-
+library(kableExtra)
 ```
 
 ## Section 2: Research questions
@@ -34,9 +42,12 @@ library(bookdown)
 
 ## Section 3: Data set introduction
 
-This dataset shows the life expectancies at birth, population size and self-reported life satisfaction across Asia countries from 2011 to 2024. For self-reported life satisfaction, the respondents are supposed to think of a ladder, with 
-the best possible life for them being a 10 and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale.
 
+This dataset from Our World in Data website ["Life satisfaction vs. life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  shows the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The dataset has been reduced to include only selected Asia countries. 
+
+For self-reported life satisfaction, the respondents are supposed to think of a ladder, with the best possible life for them being a 10 and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale.
+
+### Exploring dataset
 
 
 ```{r data}
@@ -48,10 +59,22 @@ head(life_df)
 glimpse(life_df)
 summary(life_df)
 # use kable to report variables
+```
 
-kable(
+### Table 1: List of variables in dataset {#refTable1}
+
+```{r var-table}
+knitr::kable(
   data.frame(Variable = names(life_df)),
   caption = "List of variables in the dataset"
 )
 ```
+
+
+As shown in Table \@ref(tab:var-table), the dataset contains several variables.
+
+
+## Declaration
+
+I acknowledge the use of ChatGPT (https://chat.openai.com/) to debug errors in code and enhancing language or grammar.
 
