@@ -61,7 +61,7 @@ summary(life_df)
 # use kable to report variables
 ```
 
-### Table 1: List of variables in dataset {#refTable1}
+### Table 1: List of variables in dataset 
 
 ```{r var-table}
 knitr::kable(
@@ -91,10 +91,13 @@ str(life_df)
 
 ## Data Summary
 
-#### 1. What are the life expectancy and life satisfaction in different countries in Asia? 
+1. What are the life expectancy and life satisfaction in different countries in Asia? 
 
+**Analysis on Life Expectancy**
 
-```{r Life expectancy summary}
+### Summary Statistics of Life Expectancy in Asia countries 
+
+```{r Life_expectancy_summary, tab.cap="Summary Statistics of Life Expectancy in Asia countries"}
 
 # 1. Life expectancy in Asia countries 
 
@@ -110,8 +113,10 @@ summary_stats <- life_df %>%
     `3rd quarter of Life Expectancy` = quantile(`Life expectancy at birth`, probs = 0.75, na.rm = TRUE)
   )
 print(summary_stats)
+```
 
-# Put into a table
+```{r table2}
+# Put into a table using kable
 
 kable(
   data.frame(summary_stats),
@@ -119,7 +124,79 @@ kable(
 )
 ```
 
-The summary shows that countries like Hong Kong (84.3) has the highest mean life expectancy, while **India** has the lowest among the listed Asian countries. Overall, the variation in life expectancy is relatively small within each country, suggesting stable health outcomes across the observed years.
+
+
+
+Table \@ref(tab:table2) shows that countries such as Hong Kong (84.3) have the highest mean life expectancy, while **India** has the lowest among the listed Asian countries. Overall, the variation in life expectancy within each country is relatively small, suggesting stable health outcomes over time.
+
+
+**Analysis for Life Satisfaction** 
+
+### Summary Statistics of Life Satisfaction in Asia countries 
+
+```{r Life_satisfaction_summary}
+
+# 2. Life satisfaction in Asia countries
+
+
+summary_stats2 <- life_df %>%
+  group_by(Entity) %>%
+    summarise(
+    n = n(),
+    `Mean of Life Satisfaction` = mean(`Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, na.rm = TRUE),
+    `Variance of Life Satisfaction` = var(`Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, na.rm = TRUE),
+    `Median of Life Satisfaction` = median(`Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, na.rm = TRUE),
+    `1st quarter of Life Satisfaction` = quantile(`Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, probs = 0.25, na.rm = TRUE),
+    `3rd quarter of Life Satisfaction` = quantile(`Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, probs = 0.75, na.rm = TRUE)
+  )
+print(summary_stats2)
+```
+
+```{r table3}
+kable(
+  data.frame(summary_stats2), 
+  caption = "Summary Statistics of Life Satisfaction in Asia countries"
+)
+
+```
+
+
+Table \@ref(tab:table3) indicates that Singapore (6.5 out of 10) reports the highest mean life satisfaction scores, while **India** shows the lowest among the Asian countries listed. Overall, the variance within each country is small, suggesting that life satisfaction levels are fairly consistent across the observed years.
+
+
+
+
+## Visualisations
+
+
+
+The scatterplot below answers the research question on "Is life expectancy correlated with life satisfaction?".
+
+```{r chart, fig.cap="Correlation between Life Expectancy and Life Satisfaction"}
+ggplot(life_df, aes(x = `Life expectancy at birth`, y = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, color = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`)) +
+  geom_point(alpha = 0.6) +
+  scale_color_gradient(low = "blue", high = "red") +
+  labs(title = "Correlation between Life expectancy and Life Satisfaction",
+       x = "Life Expectancy at Birth",
+       y = "Life Satisfaction (0=low to 10=high)",
+       color = "Life Satisfaction") +
+  theme_minimal()
+  
+
+```
+
+```{r Correlation}
+
+pearson_corr <- cor.test(life_df$`Life expectancy at birth`, life_df$`Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, method = "pearson")
+print(pearson_corr)
+
+```
+Findings: 
+
+  + *From the above scatterplot (Figure \@ref(fig:chart)) and correlation analysis, there is a moderately strong positive correlation (r ≈ 0.60) between life expectancy and life satisfaction, meaning that countries with higher life expectancy tend to also report higher life satisfaction.*
+
+  + *The confidence interval (0.47 to 0.71) and low p-value (<0.05) indicate that this relationship is statistically significant, not due to random chance.*
+
 
 
 
