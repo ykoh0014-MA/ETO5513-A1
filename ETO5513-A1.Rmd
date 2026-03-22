@@ -200,25 +200,30 @@ Findings:
   + *The confidence interval (0.47 to 0.71) and low p-value (<0.05) indicate that this relationship is statistically significant, not due to random chance.*
 
 
-## References
 
-<<<<<<< HEAD
-[1] United Nations. (2024). World Population Prospects – Life Expectancy, age 0 [dataset]. Processed by Our World in Data. Retrieved from https://population.un.org/wpp/downloads/
-=======
+
 # Conclusion
->>>>>>> Branch-No-2
-
-[2] Wellbeing Research Centre. (2025). Self-reported life satisfaction – World Happiness Report 2025 [dataset]. Processed by Our World in Data. Retrieved from https://worldhappiness.report/ed/2025/
-
-[3] PBL Netherlands Environmental Assessment Agency, Gapminder, & United Nations. (2023–2024). Population – HYDE, Gapminder, UN – Long-run data [dataset]. Processed by Our World in Data. Retrieved from https://ourworldindata.org/population-sources (ourworldindata.org in Bing)
-
-[4] Our World in Data. (2023). World region according to OWID [dataset]. Retrieved from https://ourworldindata.org
 
 The findings reflect on the variation in Asian countries in both life expectancy and life satisfaction: countries like Japan, Hong Kong, and Singapore rank high in both life expectancy and life satisfaction, while India consistently reports lower values.
 
 The statistically significant positive correlation (r ≈ 0.60) between life expectancy and life satisfaction indicates that those living longer life tend to report greater well-being.
 
 Together, these findings answer the two guiding questions: life expectancy and life satisfaction differ across Asia, and importantly, higher life expectancy is correlated with higher life satisfaction.
+
+
+
+
+## References
+
+
+[1] United Nations. (2024). World Population Prospects – Life Expectancy, age 0 [dataset]. Processed by Our World in Data. Retrieved from https://population.un.org/wpp/downloads/
+
+
+[2] Wellbeing Research Centre. (2025). Self-reported life satisfaction – World Happiness Report 2025 [dataset]. Processed by Our World in Data. Retrieved from https://worldhappiness.report/ed/2025/
+
+[3] PBL Netherlands Environmental Assessment Agency, Gapminder, & United Nations. (2023–2024). Population – HYDE, Gapminder, UN – Long-run data [dataset]. Processed by Our World in Data. Retrieved from https://ourworldindata.org/population-sources (ourworldindata.org in Bing)
+
+[4] Our World in Data. (2023). World region according to OWID [dataset]. Retrieved from https://ourworldindata.org
 
 
 ## Declaration
