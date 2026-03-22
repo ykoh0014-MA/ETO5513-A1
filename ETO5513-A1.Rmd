@@ -30,6 +30,7 @@ library(readxl)
 library(ggplot2)  #Plots
 library(dplyr)
 library(bookdown)
+library(ggrepel)
 
 ```
 
@@ -174,7 +175,7 @@ Table \@ref(tab:table3) indicates that Singapore (6.5 out of 10) reports the hig
 
 To answer the research question on "Is there a statistically significant correlation between life expectancy and life satisfaction?", a scatterplot is created below.
 
-```{r chart, fig.cap="Correlation between Life Expectancy and Life Satisfaction"}
+```{r chart1, fig.cap="Correlation between Life Expectancy and Life Satisfaction"}
 ggplot(life_df, aes(x = `Life expectancy at birth`, y = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, color = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`)) +
   geom_point(alpha = 0.6) +
   scale_color_gradient(low = "blue", high = "red") +
@@ -199,11 +200,37 @@ print(pearson_corr)
 *Interpretation of Findings:*
 
 
-  + *From the above scatterplot (Figure \@ref(fig:chart)) and correlation analysis, there is a moderately strong positive correlation (r ≈ 0.60) between life expectancy and life satisfaction, meaning that countries with higher life expectancy tend to also report higher life satisfaction.*
+  + *From the above scatterplot (Figure \@ref(fig:chart1)) and correlation analysis, there is a moderately strong positive correlation (r ≈ 0.60) between life expectancy and life satisfaction, meaning that countries with higher life expectancy tend to also report higher life satisfaction.*
 
   + *The confidence interval (0.47 to 0.71) and low p-value (<0.05) indicate that this relationship is statistically significant, not due to random chance.*
 
+<<<<<<< HEAD
 # Part B : Step 2
+=======
+# Part 2: Step 2
+
+Additional figure has been added to determine the Life Satisfaction and Life Expectancy by countries in 2023.
+
+```{r add_chart2, fig.cap="Life Expectancy and Life Satisfaction by Countries in 2024"}
+ggplot(life_df %>% filter(Year == 2023),
+       aes(x = `Life expectancy at birth`, y = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, color = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`)) +
+  geom_point(alpha = 0.6) +
+  geom_text_repel(aes(label = Entity), size = 3) +
+  scale_color_gradient(low = "purple", high = "orange") +
+  labs(title = "Life expectancy and Life Satisfaction by countries in 2024",
+       x = "Life Expectancy at Birth",
+       y = "Life Satisfaction (0=low to 10=high)",
+       color = "Life Satisfaction") +
+  theme_minimal()
+
+
+```
+
+
+Filtering to the recent year in 2023, the above Figure \@ref(fig:chart)) showed that Singapore has the highest life satisfaction, while maintaining one of the top in life expextancy. People in Japan and Hong Kong have higher life expectancy, but their life satisfaction is slightly lower.
+
+
+>>>>>>> Branch-No-1
 
 
 
