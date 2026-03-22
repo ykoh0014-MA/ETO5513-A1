@@ -221,7 +221,7 @@ ggplot(life_df %>% filter(Year == 2023),
 ```
 
 
-Filtering to the recent year in 2023, the above Figure \@ref(fig:chart)) showed that Singapore has the highest life satisfaction, while maintaining one of the top in life expextancy. People in Japan and Hong Kong have higher life expectancy, but their life satisfaction is slightly lower.
+Filtering to the recent year in 2023, the above Figure \@ref(fig:chart2)) showed that Singapore has the highest life satisfaction, while maintaining one of the top in life expectancy. People in Japan and Hong Kong have higher life expectancy, but their life satisfaction is slightly lower.
 
 
 
