@@ -204,12 +204,11 @@ print(pearson_corr)
 
   + *The confidence interval (0.47 to 0.71) and low p-value (<0.05) indicate that this relationship is statistically significant, not due to random chance.*
 
-<<<<<<< HEAD
-# Part B : Step 2
-=======
-# Part 2: Step 2
 
-Additional figure has been added to determine the Life Satisfaction and Life Expectancy by countries in 2023.
+# Part B : Step 2
+
+
+To determine the Life Satisfaction and Life Expectancy by countries in 2023, additional Figure 2 has been added.
 
 ```{r add_chart2, fig.cap="Life Expectancy and Life Satisfaction by Countries in 2024"}
 ggplot(life_df %>% filter(Year == 2023),
@@ -226,11 +225,12 @@ ggplot(life_df %>% filter(Year == 2023),
 
 ```
 
+*Interpretation of Findings:*
 
-Filtering to the recent year in 2023, the above Figure \@ref(fig:chart)) showed that Singapore has the highest life satisfaction, while maintaining one of the top in life expextancy. People in Japan and Hong Kong have higher life expectancy, but their life satisfaction is slightly lower.
+  + Filtering to the recent year in 2023, the above Figure \@ref(fig:chart)) showed that Singapore has the highest life satisfaction, while maintaining one of the top in life expextancy. People in Japan and Hong Kong have higher life expectancy, but their life satisfaction is slightly lower.
 
 
->>>>>>> Branch-No-1
+
 
 
 
