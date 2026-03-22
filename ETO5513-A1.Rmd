@@ -11,7 +11,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE)
 knitr::opts_chunk$set(fig.path = "Figures", fig.align ="center", out.width = "80%")
-#options(bookdown.table.caption = FALSE)
+
 ```
 
 # Part A
@@ -30,22 +30,23 @@ library(readxl)
 library(ggplot2)  #Plots
 library(dplyr)
 library(bookdown)
-library(kableExtra)
+
 ```
 
 ## Research Questions
 
-1. What are the life expectancy and life satisfaction in Asia countries? 
-2. Is life expectancy correlated with life satisfaction?
+1. What are the patterns of life expectancy and life satisfaction across Asian countries? 
+2. Is there a statistically significant correlation between life expectancy and life satisfaction?
 
 
 
 ## Dataset Introduction
 
 
-This dataset from Our World in Data website ["Life satisfaction vs. life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  shows the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The original dataset has been reduced to include only selected Asia countries to fit the criteria of the assessment. 
+This dataset from Our World in Data website ["Life satisfaction vs. life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  contains information on the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The original dataset has been reduced to include only selected Asia countries to fit the scope of the assessment. 
 
-The self-reported life satisfaction is defined when the respondents are supposed to think of a ladder, with the best possible life for them being a 10 and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale.
+Life expectancy at birth (in years) represents the average number of years a newborn is expected to live under current mortality rates. Life satisfaction is a self-reported measure on a scale from 0 (worst possible life) to 10 (best possible life), based on respondents’ evaluation of their current life.
+
 
 ### Exploring dataset
 
@@ -91,7 +92,7 @@ str(life_df)
 
 ## Data Summary
 
-1. What are the life expectancy and life satisfaction in different countries in Asia? 
+To answer the research question on "What are the patterns of life expectancy and life satisfaction across Asian countries?", the summary tables are below.  
 
 **Analysis on Life Expectancy**
 
@@ -170,7 +171,7 @@ Table \@ref(tab:table3) indicates that Singapore (6.5 out of 10) reports the hig
 
 
 
-To answer the research question on "Is life expectancy correlated with life satisfaction?", a scatterplot is created below.
+To answer the research question on "Is there a statistically significant correlation between life expectancy and life satisfaction?", a scatterplot is created below.
 
 ```{r chart, fig.cap="Correlation between Life Expectancy and Life Satisfaction"}
 ggplot(life_df, aes(x = `Life expectancy at birth`, y = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, color = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`)) +
