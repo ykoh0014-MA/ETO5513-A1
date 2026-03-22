@@ -203,6 +203,36 @@ print(pearson_corr)
 
   + *The confidence interval (0.47 to 0.71) and low p-value (<0.05) indicate that this relationship is statistically significant, not due to random chance.*
 
+# Part B : Step 2
+
+
+
+
+Next, we compare the average Life Satisfaction over the years by population size and country.
+
+```{r table4}
+
+avg_table <- life_df %>%
+  group_by(Entity) %>%
+  summarise(
+    AvgLifeSatisfaction = mean(`Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, na.rm = TRUE),
+    AvgPopulation = mean(Population, na.rm = TRUE)
+  ) %>%
+  arrange(Entity)
+
+# Display nicely formatted table
+kable(avg_table, caption = "Average life satisfaction and population size by country (2011–2024)")
+
+```
+
+
+*Interpretation of Findings:*
+
+  + Table \@ref(tab:table4) shows that China and India dominate in population size, with averages above 1.3–1.4 billion, yet their average life satisfaction scores are relatively low (China: 5.35, India: 4.22).
+
+  + Smaller countries and territories (e.g., Singapore, Taiwan, Hong Kong) have much smaller populations but generally higher satisfaction scores.
+
+  + This suggests that economic development, social policies, and governance quality may play a stronger role than population size in shaping life satisfaction.
 
 
 
