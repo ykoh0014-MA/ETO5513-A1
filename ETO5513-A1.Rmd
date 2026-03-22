@@ -43,7 +43,7 @@ library(bookdown)
 ## Dataset Introduction
 
 
-This dataset from Our World in Data website ["Life satisfaction vs. life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  contains information on the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The original dataset has been reduced to include only selected Asia countries to fit the scope of the assessment. 
+This dataset from Our World in Data website ["Life satisfaction vs. Life expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  contains information on the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The original dataset has been reduced to include only selected Asia countries to fit the scope of the assessment. 
 
 Life expectancy at birth (in years) represents the average number of years a newborn is expected to live under current mortality rates. Life satisfaction is a self-reported measure on a scale from 0 (worst possible life) to 10 (best possible life), based on respondents’ evaluation of their current life.
 
@@ -194,7 +194,7 @@ pearson_corr <- cor.test(life_df$`Life expectancy at birth`, life_df$`Life satis
 print(pearson_corr)
 
 ```
-Findings: 
+*Findings*
 
   + *From the above scatterplot (Figure \@ref(fig:chart)) and correlation analysis, there is a moderately strong positive correlation (r ≈ 0.60) between life expectancy and life satisfaction, meaning that countries with higher life expectancy tend to also report higher life satisfaction.*
 
@@ -203,7 +203,7 @@ Findings:
 
 
 
-# Conclusion
+## Conclusion
 
 The findings reflect on the variation in Asian countries in both life expectancy and life satisfaction: countries like Japan, Hong Kong, and Singapore rank high in both life expectancy and life satisfaction, while India consistently reports lower values.
 
