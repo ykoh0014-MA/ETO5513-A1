@@ -36,7 +36,7 @@ library(ggrepel)
 
 ## Research Questions
 
-What are the patterns of life expectancy and life satisfaction across Asian countries between 2011 and 2024, and how do these vary with population size? Is there a statistically significant correlation between life expectancy and life satisfaction during this period?
+Is there a statistically significant correlation between life expectancy and life satisfaction during this period? What are the patterns of life expectancy and life satisfaction across Asian countries between 2011 and 2024, and how do these vary with population size? 
 
 
 
