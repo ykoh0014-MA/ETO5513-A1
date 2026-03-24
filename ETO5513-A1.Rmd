@@ -36,7 +36,9 @@ library(ggrepel)
 
 ## Research Questions
 
+
 Is there a statistically significant correlation between life expectancy and life satisfaction between 2011 and 2024? What are the patterns of life expectancy and life satisfaction across Asian countries in 2023, and how do these vary with population size? 
+
 
 
 
