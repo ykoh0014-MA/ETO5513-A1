@@ -55,7 +55,7 @@ Life expectancy at birth (in years) represents the average number of years a new
 
 
 ```{r Load_data}
-life_df <- readxl::read_excel("C:/Users/eleen/Documents/Documents/Monash Units/TP2-26_ETO5513 Collaborative/A1/ETO5513-A1/Data/Life Expectancy and Life Satisfaction_Asia.xlsx")
+life_df <- readxl::read_excel("Data/Life Expectancy and Life Satisfaction_Asia.xlsx")
 ```
 
 ```{r Explore_data}
@@ -85,7 +85,7 @@ The dataset comprises `r nrow(life_df)` observations and `r ncol(life_df)` varia
 Below shows the image of the inline R code on the number of variables and observations.
 
 ```{r Load_Image}
-knitr::include_graphics("C:/Users/eleen/Documents/Documents/Monash Units/TP2-26_ETO5513 Collaborative/A1/ETO5513 Assessment 1/Picture1.png")
+knitr::include_graphics("Image/Image of R code.png")
 ```
 
 Below shows the type of variables in the data set. There are 4 numeric variables and 1 character variable.
