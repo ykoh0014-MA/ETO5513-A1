@@ -210,13 +210,14 @@ print(pearson_corr)
 
 To determine the Life Satisfaction and Life Expectancy by countries in 2023, additional Figure 2 has been added.
 
-```{r add_chart2, fig.cap="Life Expectancy and Life Satisfaction by Countries in 2024"}
+```{r chart2, fig.cap="Life Expectancy and Life Satisfaction by Countries in 2023"}
+
 ggplot(life_df %>% filter(Year == 2023),
        aes(x = `Life expectancy at birth`, y = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`, color = `Life satisfaction (measured from lowest=0 to highest=10 on Cantril Ladder)`)) +
   geom_point(alpha = 0.6) +
   geom_text_repel(aes(label = Entity), size = 3) +
   scale_color_gradient(low = "purple", high = "orange") +
-  labs(title = "Life expectancy and Life Satisfaction by countries in 2024",
+  labs(title = "Life expectancy and Life Satisfaction by countries in 2023",
        x = "Life Expectancy at Birth",
        y = "Life Satisfaction (0=low to 10=high)",
        color = "Life Satisfaction") +
@@ -227,7 +228,7 @@ ggplot(life_df %>% filter(Year == 2023),
 
 *Interpretation of Findings:*
 
-  + Filtering to the recent year in 2023, the above Figure \@ref(fig:chart)) showed that Singapore has the highest life satisfaction, while maintaining one of the top in life expextancy. People in Japan and Hong Kong have higher life expectancy, but their life satisfaction is slightly lower.
+  + Filtering to the recent year in 2023, as shown in Figure \@ref(fig:chart2), Singapore has the highest life satisfaction, while maintaining one of the top in life expectancy. People in Japan and Hong Kong have higher life expectancy, but their life satisfaction is slightly lower.
 
 
 
@@ -268,6 +269,10 @@ kable(avg_table, caption = "Average life satisfaction and population size by cou
 The findings reflect on the variation in Asian countries in both life expectancy and life satisfaction: countries like Japan, Hong Kong, and Singapore rank high in both life expectancy and life satisfaction, while India consistently reports lower values.
 
 The statistically significant positive correlation (r ≈ 0.60) between life expectancy and life satisfaction indicates that those living longer life tend to report greater well-being.
+
+Population scale does not guarantee higher satisfaction. China and India, despite their massive populations, report relatively low average satisfaction (around 5.35 and 4.22 respectively).
+
+Smaller, high-income countries consistently achieve higher satisfaction. Singapore (6.52) and Taiwan (6.42) stand out as leaders, showing that effective governance, economic prosperity, and social stability can outweigh population size in shaping wellbeing.
 
 Together, these findings answer the two guiding questions: life expectancy and life satisfaction differ across Asia, and importantly, higher life expectancy is correlated with higher life satisfaction.
 
