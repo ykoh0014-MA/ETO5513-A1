@@ -36,8 +36,7 @@ library(ggrepel)
 
 ## Research Questions
 
-1. What are the patterns of life expectancy and life satisfaction across Asian countries? 
-2. Is there a statistically significant correlation between life expectancy and life satisfaction?
+What are the patterns of life expectancy and life satisfaction across Asian countries between 2011 and 2024, and how do these vary with population size? Is there a statistically significant correlation between life expectancy and life satisfaction during this period?
 
 
 
@@ -66,7 +65,7 @@ summary(life_df)
 
 ### Table 1: List of variables in dataset 
 
-```{r var-table}
+```{r table1}
 knitr::kable(
   data.frame(Variable = names(life_df)),
   caption = "List of variables in the dataset"
@@ -74,7 +73,7 @@ knitr::kable(
 ```
 
 
-As shown in Table \@ref(tab:var-table), the dataset contains several variables.
+As shown in Table \@ref(tab:table1), the dataset contains several variables.
 
 ## Dataset Description
 
@@ -274,7 +273,7 @@ Population scale does not guarantee higher satisfaction. China and India, despit
 
 Smaller, high-income countries consistently achieve higher satisfaction. Singapore (6.52) and Taiwan (6.42) stand out as leaders, showing that effective governance, economic prosperity, and social stability can outweigh population size in shaping wellbeing.
 
-Together, these findings answer the two guiding questions: life expectancy and life satisfaction differ across Asia, and importantly, higher life expectancy is correlated with higher life satisfaction.
+In summary, there is variation in Asian countries in both life expectancy and life satisfaction. Living longer is highly correlated with higher life satisfaction. Smaller size countries (in terms of population size) may have better well-being than larger countries hence higher satisfaction. 
 
 
 
