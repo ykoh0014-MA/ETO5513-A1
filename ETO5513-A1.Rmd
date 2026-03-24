@@ -36,7 +36,7 @@ library(ggrepel)
 
 ## Research Questions
 
-What are the patterns of life expectancy and life satisfaction across Asian countries between 2011 and 2024, and how do these vary with population size? Is there a statistically significant correlation between life expectancy and life satisfaction during this period?
+Is there a statistically significant correlation between life expectancy and life satisfaction between 2011 and 2024? What are the patterns of life expectancy and life satisfaction across Asian countries in 2023, and how do these vary with population size? 
 
 
 
@@ -60,12 +60,13 @@ life_df <- readxl::read_excel("C:/Users/eleen/Documents/Documents/Monash Units/T
 head(life_df)
 glimpse(life_df)
 summary(life_df)
-# use kable to report variables
+
 ```
 
 ### Table 1: List of variables in dataset 
 
 ```{r table1}
+# use kable to report variables
 knitr::kable(
   data.frame(Variable = names(life_df)),
   caption = "List of variables in the dataset"
