@@ -47,8 +47,7 @@ Is there a statistically significant correlation between life expectancy and lif
 
 This dataset from Our World in Data website ["Life Satisfaction vs. Life Expectancy"] (https://ourworldindata.org/grapher/life-satisfaction-vs-life-expectancy)  contains information on the life expectancies at birth, population size and self-reported life satisfaction across countries from 2011 to 2024. The original dataset has been reduced to include only selected Asia countries to fit the scope of the assessment. 
 
-
-Life expectancy at birth (in years) represents the average number of years a newborn is expected to live under current mortality rates. Life satisfaction is a self-reported measure on a scale from 0 (worst possible life) to 10 (best possible life), based on respondents’ evaluation of their current life.
+Entity is the country of observation, Year indicates the time point of data collection, and population reflects the total number of people in each country for the given year.Life expectancy at birth (in years) represents the average number of years a newborn is expected to live under current mortality rates. Life satisfaction is a self-reported measure on a scale from 0 (worst possible life) to 10 (best possible life), based on respondents’ evaluation of their current life.
 
 
 ### Exploring dataset
@@ -89,6 +88,7 @@ knitr::include_graphics("Image/Image of R code.png")
 ```
 
 Below shows the type of variables in the data set. There are 4 numeric variables and 1 character variable.
+
 ```{r Showtype}
 
 str(life_df)
@@ -274,7 +274,7 @@ The statistically significant positive correlation (r ≈ 0.60) between life exp
 
 Population scale does not guarantee higher satisfaction. China and India, despite their massive populations, report relatively low average satisfaction (around 5.35 and 4.22 respectively).
 
-Smaller, high-income countries consistently achieve higher satisfaction. Singapore (6.52) and Taiwan (6.42) stand out as leaders, showing that effective governance, economic prosperity, and social stability can outweigh population size in shaping wellbeing.
+Smaller, high-income countries consistently achieve higher satisfaction. Singapore (6.52) and Taiwan (6.42) stand out in terms of high satisfaction in life, indicating that other factors not captured in the data i.e. effective governance, economic prosperity, and social stability, can outweigh population size in shaping well-being.
 
 In summary, there is variation in Asian countries in both life expectancy and life satisfaction. Living longer is highly correlated with higher life satisfaction. Smaller size countries (in terms of population size) may have better well-being than larger countries hence higher satisfaction. 
 
